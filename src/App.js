@@ -4,8 +4,7 @@ import "./App.css";
 import RequireAuth from "./layout/RequireAuth";
 import Login from "./page/Login.js";
 import Post from "./page/Post.js";
-import AddPost from "./page/AddPost.js";
-
+import PostCreate from "./page/PostCreate.js";
 import Unauthorized from "./page/UnauthorizedPage.js";
 
 function App() {
@@ -15,7 +14,7 @@ function App() {
         <Route path="/" element={<RequireAuth />} />
         <Route path="/login" element={<Login />} />
         <Route path="/post" element={<Post />} />
-        <Route path="/add-post" element={<AddPost />} />
+        <Route path="/addpost" element={<PostCreate />} />
         <Route path="/unauthorized-page" element={<Unauthorized />} />
       </Routes>
     </>

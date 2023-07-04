@@ -14,7 +14,7 @@ export default function Post() {
   const [totalRows, setTotalRows] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [post, setPost] = useState([]);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(5);
   const navigate = useNavigate();
 
   const displayPost = useCallback(
@@ -46,7 +46,7 @@ export default function Post() {
     <>
       <div className="container mx-auto px-4 w-full my-8">
         <div className="flex flex-row w-full justify-end">
-          <Button color="red" onClick={() => navigate("/add-post")}>
+          <Button color="red" onClick={() => navigate("/addpost")}>
             Add Post
           </Button>
         </div>
