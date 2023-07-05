@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import endpointService from "../services/endpoint.services.js";
 import Pagination from "../component/pagination/Pagination.js";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   Card,
   CardBody,
@@ -22,8 +22,6 @@ export default function Post() {
       endpointService
         .DisplayPost(page, postsPerPage)
         .then((res) => {
-          console.log("🚀 ~ file: Post.js:15 ~ .then ~ res:", res);
-
           setPost(res.data.data.docs);
           setTotalRows(res.data.data.totalDocs);
         })
@@ -63,7 +61,14 @@ export default function Post() {
                     <Typography>{post.note}</Typography>
                   </CardBody>
                   <CardFooter className="flex w-full justify-end">
-                    <Button>Read More</Button>
+                    <Link
+                      to={{
+                        pathname: `/edit-post/${post._id}`,
+                        data: post._id,
+                      }}
+                    >
+                      <Button>Read More</Button>
+                    </Link>
                   </CardFooter>
                 </Card>
               </>

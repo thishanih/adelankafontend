@@ -6,6 +6,7 @@ import Login from "./page/Login.js";
 import Post from "./page/Post.js";
 import PostCreate from "./page/PostCreate.js";
 import Unauthorized from "./page/UnauthorizedPage.js";
+import EditPost from "./page/EditPost";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/post" element={<Post />} />
         <Route path="/addpost" element={<PostCreate />} />
+        <Route path="/edit-post/:id" element={<EditPost />} />
         <Route path="/unauthorized-page" element={<Unauthorized />} />
       </Routes>
     </>
