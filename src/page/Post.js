@@ -11,6 +11,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import CountNumber from "../component/pagination/CountNumber.js";
 
 export default function Post() {
   const [totalRows, setTotalRows] = useState(0);
@@ -68,6 +69,14 @@ export default function Post() {
             <Button color="red" onClick={() => navigate("/post/add")}>
               Add Post
             </Button>
+          </div>
+
+          <div>
+            <CountNumber
+              pageSize={postsPerPage}
+              totalCount={totalRows}
+              currentPage={currentPage}
+            />
           </div>
 
           <div className="flex flex-col gap-4 w-full justify-center my-8">

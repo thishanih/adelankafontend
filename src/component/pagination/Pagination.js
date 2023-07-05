@@ -34,25 +34,7 @@ const Pagination = (props) => {
   let lastPage = paginationRange[paginationRange.length - 1];
   return (
     <>
-      <div className="flex w-full justify-between items-center">
-        <div className="content-center">
-          <p className="text-sm font-medium text-gray-600">
-            Showing
-            <span className="font-semibold text-gray-700">
-              {" "}
-              {currentPage * pageSize - 10}{" "}
-            </span>
-            to
-            <span className="font-semibold text-gray-700">
-              {" "}
-              {currentPage * pageSize}{" "}
-            </span>
-            of
-            <span className="font-semibold text-gray-700"> {totalCount} </span>
-            results
-          </p>
-        </div>
-
+      <div className="flex w-full justify-end items-center">
         <div className=" ">
           <ul
             className={classnames("pagination-container", {
