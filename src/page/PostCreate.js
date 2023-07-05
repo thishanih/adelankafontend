@@ -29,7 +29,7 @@ export default function PostCreate() {
 
     validationSchema: Yup.object().shape({
       title: Yup.string().required("Required"),
-      note: Yup.string().max(50).required("Required"),
+      note: Yup.string().max(400).required("Required"),
     }),
 
     // Submit data
